@@ -120,6 +120,9 @@ git config --global alias.lg "log --color --graph --pretty=format:'%Cred%h%Crese
 # GitHub Personal Access Token 설정
 read -s -p "GitHub Personal Access Token (PAT)을 입력하세요: " PAT
 echo
+
+# PAT를 credentials 파일에 저장
+echo "https://${GIT_USERNAME}:${PAT}@github.com" > ~/.git-credentials
 git config --global credential.helper store
 
 echo "Git 설정이 완료되었습니다!"
